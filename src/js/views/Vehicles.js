@@ -4,18 +4,18 @@ import "../../styles/home.css";
 import {Context} from "../store/appContext"
 import ListHorizontal from "../component/listHorizontal";
 
-export const Planets = () => {
+export const Vehicles = () => {
 
 const {store, actions} = useContext(Context)
 useEffect(()=>{
-	actions.fetchStarWars("planets") 
+	actions.fecthVehicles("vehicles") 
 	
 
 },[])
 return (
 	<div className="text-center mt-5">
 	
-		<ListHorizontal element="planets" />
+		<ListHorizontal element="vehicles" />
 		<nav aria-label="...">
   <ul className="pagination">
     <li className="page-item disabled">

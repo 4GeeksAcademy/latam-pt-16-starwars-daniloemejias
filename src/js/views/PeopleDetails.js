@@ -7,24 +7,23 @@ import { useParams } from "react-router-dom";
 
 
 
-export const PlanetsDetail = (planets) => {
+export const PeopleDetails = (planets) => {
 
 const {store, actions} = useContext(Context)
-const {planetsId}=useParams()
+const {peopleId}=useParams()
 useEffect(()=>{
-	actions.fetchPlanetsDetail(planetsId) 
+	actions.fetchPeopleDetail(peopleId) 
 	
 
 },[])
-console.log(store.planet)
+//console.log(store.people)
 return (
 	<div className="text-center mt-5">
 	
-		<h1>Planet Details</h1>
-        <h2>Id: {planetsId} </h2>
-		<h2>Name: {store.planet?.properties?.name || "Cargando"}</h2>
-        <h2>Climate: {store.planet?.properties?.climate || "Cargando"}</h2>
-        <img src = {"https://starwars-visualguide.com/assets/img/planets/"+planetsId+".jpg"}></img>
+		<h1>People Details</h1>
+        <h2>Id: {peopleId} </h2>
+		<h2>Name: {store.people?.properties?.name || "Cargando"}</h2>
+        <img src = {"https://starwars-visualguide.com/assets/img/characters/"+peopleId+".jpg"}></img>
             {/* {planets && Object.entries(planets).map(([key, value]) => (
                 // key != "created" || key != "edited" || key != "url" &&
                 <div key={key}>
