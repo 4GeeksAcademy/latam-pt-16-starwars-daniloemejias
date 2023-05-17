@@ -11,18 +11,18 @@ const ListHorizontal = ({ element }) => {
   }
 
 
-  return (<div className="overflow-auto d-flex w-100">
+  return (<div className="overflow-auto d-flex w-100 p-2">
     {store[element]?.map(item =>
       <div key={item.uid} className="card" style={{ minWidth: "200px" }}>
         <img src={item.img} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{item.name}</h5>
-          <button href="#" className="btn btn-outline-warning"
+          <button href="#" className="btn btn-outline-warning mx-2"
             onClick={() => actions.markFavorite(`${element}/${item.uid}`, item.name)}>
             <i className={`bi bi-heart${checkFavorite(item.uid) ? "-fill" : ""}`}></i>
           </button>
           <Link to={`/${element}/${item.uid}`}>
-          <button className="btn btn-primary">More info</button>
+          <button className="btn btn-primary mx-2">More info</button>
           </Link>
         </div>
       </div>
